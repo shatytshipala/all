@@ -1,0 +1,254 @@
+{% extends 'registration/registration_base.html' %}
+{% block title %}ESYSTEM - Login{% endblock title %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% load static %}
+
+
+
+
+
+
+<div style="background-color:rgb(135, 206, 235);color:rgb(255, 255, 255);padding:70px;">
+
+  <h2>
+    <font color="orange"></font>
+  </h2>
+  <h2>
+    <font color="orange"></font>
+  </h2>
+</div>
+
+<style>
+  /* Style for the form container */
+  #login-form {
+    background-color: rgb(113, 166, 180);
+
+
+
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    /* You can adjust the width as needed */
+    margin: 20px auto 0;
+    /* Add margin to the top to move the form down */
+  }
+
+  /* Style for the form labels */
+  #login-form label {
+    color: white;
+    /* Set label text color to white */
+  }
+
+  /* Style for the input fields */
+  #login-form input {
+    background-color: #ffe6cc;
+    /* Light orange background for input fields */
+    border: 1px solid #ffcc99;
+    /* Border color */
+    border-radius: 5px;
+    /* Rounded corners */
+    margin-bottom: 10px;
+    /* Add some space between input fields */
+  }
+
+  /* Style for the error message */
+  .text-danger {
+    color: red;
+    /* Set error message text color to red */
+  }
+
+  /* Style for the submit button */
+  #login-btn {
+    background-color: #ff9933;
+    /* Orange button background color */
+    color: white;
+    /* Button text color */
+    border: none;
+    /* Remove button border */
+    border-radius: 5px;
+    /* Rounded corners */
+    padding: 10px 15px;
+    /* Add padding to the button */
+    cursor: pointer;
+    /* Change cursor to pointer on hover */
+  }
+
+  /* Style for the bottom links */
+  .login-bottom a {
+    color: #ff9933;
+    /* Set link color to orange */
+  }
+</style>
+
+
+<style>
+  h2 {
+    text-align: center;
+  }
+</style>
+
+<style>
+  h1 {
+    text-align: center;
+  }
+</style>
+
+
+<div style="background-color:rgb(135, 206, 235);color:rgb(255, 255, 255);padding:70px;">
+
+  <h2>
+    <font color="orange"></font>
+  </h2>
+  <h2>
+    <font color="orange"></font>
+  </h2>
+</div>
+
+
+
+<div style="background-color:rgb(135, 206, 235);color:rgb(255, 255, 255);padding:45px;">
+  <h2> . </h2>
+  <p> .</p>
+  <p>.
+
+
+  <p>.</p>
+
+
+  <div style="background-color:rgb(135, 206, 235);color:rgb(255, 255, 255);padding:5px;">
+
+
+
+
+    <p>shatytshipala@gmail.com</p>
+   
+    <p></p>
+    <i style="font-size:24px" class="fa">&#xf0e0;</i>
+
+  </div>
+
+
+
+
+</div>
+
+
+
+</style>
+
+<div id="learning-text" style="position: relative; top: 2 in;">
+<div id="login">
+  <style>
+    body {
+      background-color: rgb(0, 0, 255);
+
+    }
+  </style>
+
+
+
+  <i class="fas fa-lock"></i>
+  <span class="login-title-text">
+
+    <span style="font-weight: bold; color: rgb(173, 216, 230);">
+      <style>
+        @keyframes colorChange {
+          0% {
+            color: rgb(0, 0, 255); /* Medium Blue */
+
+          }
+          25% {
+            color: rgb(0, 100, 0); /* Dark Green */
+
+
+          }
+          50% {
+            color: rgb(204, 204, 0); /* Dark Yellow */
+
+
+          }
+          75% {
+            color: rgb(204, 102, 0); /* Dark Orange */
+
+
+          }
+          100% {
+            color: rgb(255, 51, 51); /* Light red */
+          }
+        }
+      
+        /* Apply animation to the text */
+        #learning-text {
+          animation: colorChange 2s infinite; /* Duration 4 seconds, infinite loop */
+        }
+      </style>
+      <div id="learning-text" style="position: relative; top: 2 in;">
+      <h2 id="learning-text">VLP SYSTEM</h2>
+    
+      <img src="{% static 'img/schoollogo.PNG' %}" width="85px" alt="Logo Django LM">
+    </div>
+    </span>
+    
+
+  </span>
+
+
+  <form action="" method="POST" id="login-form">{% csrf_token %}
+    <div class="form-group px-3">
+      <label for="username_id"><i class="fas fa-address-card"></i>ID Number/User Name</label>
+      <input type="text" name="username" id="username_id" class="form-control" required>
+      <div id="message-wrapper"></div>
+    </div>
+    <div class="form-group px-3">
+      <label for="password_id"><i class="fas fa-key"></i>Password</label>
+      <input type="password" name="password" id="password_id" class="form-control" required>
+    </div>
+    {% if form.errors %}
+    <span class="text-danger"><i class="fas fa-exclamation-circle"></i> Invalid ID & Password.</span><br>
+    {% endif %}
+    
+
+    <button type="submit" class="btn btn-primary" id="login-btn"><i class="fas fa-user"></i><small> LOGIN</small></button>
+  </form>
+  <br>
+  <div class="login-bottom">
+    <a href="{% url 'password_reset' %}" class="link">Forgot your password, Reset here</a>
+    <!-- <a href="{% url 'register' %}" class="link">Don't have an account ?</a> -->
+  </div>
+</div>
+</div>
+{% endblock content %}
+
+{% block js %}
+
+<script>
+  $('#login-form').submit(function (e) {
+    // e.preventDefault();
+    $('#login-btn').addClass('disabled')
+    $('#login-btn').html(`<i class="fas fa-arrow-right"></i> Loging you in . . .`)
+  })
+
+  $("#username").on("input", function () {
+    username = $(this).val();
+
+    $.ajax({
+      url: "/accounts/ajax/validate-username/",
+      data: {
+        username: username
+      },
+      dataType: 'json',
+      success: function (data) {
+        if (data.is_taken) {
+          console.log(data.is_taken);
+          $('#message-wrapper').html(`<p class="my-2 text-danger"><span class="bg-error p-2"><b>${username}</b> already taken :( try another one </span></p>`)
+        }
+        else {
+          $('#message-wrapper').html(`<p class="my-2 text-success"><span class="bg-correct p-2"><b>${username}</b> is valid </span></p>`)
+        }
+      }
+
+    })
+  })
+</script>
+{% endblock %}

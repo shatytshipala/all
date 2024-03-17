@@ -1,0 +1,644 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock title %}
+
+{% block content %}
+
+<div id="input-nav"><a href="{% url 'home' %}" class="primary1">Home</a> <i>&rsaquo;</i> Assesment Results</div>
+
+{% if messages %}
+    {% for message in messages %}
+        {% if message.tags == 'error' %}
+            <div class="alert alert-danger">
+                <i class="fas fa-exclamation-circle"></i>{{ message }}
+            </div>
+        {% else %}
+            <div class="alert alert-success">
+                <i class="fas fa-check-circle"></i>{{ message }}
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+<div class="title-1" style="font-weight: bold; color: orange; text-align: center;"><i class="fa fa-spell-check"></i>Assessment Results</div>
+
+<div class="title-line"></div>
+
+
+<p style="color:orange; font-weight:bold;"><center>{{ student.level }} Result</center></p>
+
+
+<div class="table-responsive p-0 px-2 mt-3">
+  <div class="table-title" style="text-align: center; font-weight: bold; font-size: 19px;">TERM 1/Semester ONE</div>
+  <table class="table table-light">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Subject/Module Name</th>
+        <th>Subject Code</th>
+        <th>points</th>
+        <th>Blank Box</th>
+        <th>Assignment</th>
+        <th>Test 1</th>
+        <th>Daily Attendance</th>
+        <th>Marks1</th>
+        <th>Marks2</th>
+        <th>Marks3</th>
+        <th>Marks4</th>
+        <th>Marks5</th>
+        <th>Marks6</th>
+        <th>Marks7</th>
+        <th>Marks8</th>
+        <th>Marks9</th>
+        <th>Marks10</th>
+
+        <th>Marks11</th>
+        <th>Marks12</th>
+        <th>Marks13</th>
+        <th>Marks14</th>
+        <th>Marks15</th>
+        <th>Marks16</th>
+        <th>Marks17</th>
+        <th>Marks18</th>
+        <th>Marks19</th>
+        <th>Marks20</th>
+
+        <th>Marks21</th>
+        <th>Marks22</th>
+        <th>Marks23</th>
+        <th>Marks24</th>
+        <th>Marks25</th>
+        <th>Marks26</th>
+        <th>Marks27</th>
+        <th>Marks28</th>
+        <th>Marks29</th>
+        <th>Marks20</th>
+
+        <th>Marks31</th>
+        <th>Marks32</th>
+        <th>Marks33</th>
+        <th>Marks34</th>
+        <th>Marks35</th>
+        <th>Marks36</th>
+        <th>Marks37</th>
+        <th>Marks38</th>
+        <th>Marks39</th>
+        <th>Marks40</th>
+
+        <th>YEAR MARK/SEMESTER/TERM MARKS41</th>
+        <th>Marks42</th>
+        <th>Marks43</th>
+        <th>Marks44</th>
+        <th>Marks45</th>
+        <th>Marks46</th>
+        <th>Marks47</th>
+        <th>Marks48</th>
+        <th>REPORT/FINAL RESULTS</th>
+        <th>FINAL EXAM</th>
+        <th>YEAR MARK/PREDICATE MARK
+        </th>
+        <th>Attendance Register</th>
+      </tr>
+    </thead>
+    {% for course in courses %}
+    {% if course.course.semester == "TERM 1" %}
+    <tbody>
+      <tr class="{% if forloop.counter|divisibleby:2 %}bg-gray{% endif %}">
+        <th scope="row">{{ forloop.counter }}</th>
+        <td><a href="{{ course.course.get_absolute_url }}">{{ course.course.title }}</a></td>
+        <td>{{ course.course.code }}</td>
+        <td>{{ course.course.credit }}</td>
+        <td>{{ course.assignment }}</td>
+        <td>{{ course.mid_exam }}</td>
+        <td>{{ course.quiz }}</td>
+        <td>{{ course.attendance }}</td>
+        <td>{{ course.marks_1 }}</td>
+        <td>{{ course.marks_2 }}</td>
+        <td>{{ course.marks_3}}</td>
+        <td>{{ course.marks_4 }}</td>
+        <td>{{ course.marks_5 }}</td>
+        <td>{{ course.marks_6 }}</td>
+        <td>{{ course.marks_7}}</td>
+        <td>{{ course.marks_8 }}</td>
+        <td>{{ course.marks_9}}</td>
+        <td>{{ course.marks_10 }}</td>
+
+        <td>{{ course.marks_11 }}</td>
+        <td>{{ course.marks_12 }}</td>
+        <td>{{ course.marks_13}}</td>
+        <td>{{ course.marks_14 }}</td>
+        <td>{{ course.marks_15 }}</td>
+        <td>{{ course.marks_16 }}</td>
+        <td>{{ course.marks_17}}</td>
+        <td>{{ course.marks_18 }}</td>
+        <td>{{ course.marks_19}}</td>
+        <td>{{ course.marks_20 }}</td>
+
+        <td>{{ course.marks_21 }}</td>
+        <td>{{ course.marks_22 }}</td>
+        <td>{{ course.marks_23}}</td>
+        <td>{{ course.marks_24 }}</td>
+        <td>{{ course.marks_25 }}</td>
+        <td>{{ course.marks_26 }}</td>
+        <td>{{ course.marks_27}}</td>
+        <td>{{ course.marks_28 }}</td>
+        <td>{{ course.marks_29}}</td>
+        <td>{{ course.marks_30 }}</td>
+
+        <td>{{ course.marks_31 }}</td>
+        <td>{{ course.marks_32 }}</td>
+        <td>{{ course.marks_33}}</td>
+        <td>{{ course.marks_34 }}</td>
+        <td>{{ course.marks_35 }}</td>
+        <td>{{ course.marks_36 }}</td>
+        <td>{{ course.marks_37}}</td>
+        <td>{{ course.marks_38 }}</td>
+        <td>{{ course.marks_39}}</td>
+        <td>{{ course.marks_40 }}</td>
+
+        <td>{{ course.marks_41 }}</td>
+        <td>{{ course.marks_42 }}</td>
+        <td>{{ course.marks_43}}</td>
+        <td>{{ course.marks_44 }}</td>
+        <td>{{ course.marks_45 }}</td>
+        <td>{{ course.marks_46 }}</td>
+        <td>{{ course.marks_47}}</td>
+        <td>{{ course.marks_48 }}</td>
+        <td>{{ course.marks_49}}</td>
+        <td>{{ course.marks_50 }}</td>
+
+        <td>{{ course.final_exam }}</td>
+        {% if course.total >= 45 %}
+        <td class="success"><i class="fas fa-check-circle"></i> {{ course.total }}</td>
+        {% else %}
+        <td class="danger"><i class="fas fa-exclamation-circle"></i> {{ course.total }}</td>
+        {% endif %}
+      </tr>
+    </tbody>
+    {% endif %}
+    {% endfor %}
+  </table>
+  </div>
+
+ 
+
+
+
+<div class="table-responsive p-0 px-2 mt-3">
+  <div class="table-title" style="text-align: center; font-weight: bold; font-size: 19px;">TERM 2/SEMESTER ONE</div>
+  <table class="table table-light">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Subject/Module Name</th>
+      <th>Subjet Code</th>
+      <th>points</th>
+      <th>Blank Box</th>
+      <th>Assignment</th>
+      <th>Test 1</th>
+      <th>Daily Attendance</th>
+      <th>Marks1</th>
+      <th>Marks2</th>
+      <th>Marks3</th>
+      <th>Marks4</th>
+      <th>Marks5</th>
+      <th>Marks6</th>
+      <th>Marks7</th>
+      <th>Marks8</th>
+      <th>Marks9</th>
+      <th>Marks10</th>
+
+      <th>Marks11</th>
+      <th>Marks12</th>
+      <th>Marks13</th>
+      <th>Marks14</th>
+      <th>Marks15</th>
+      <th>Marks16</th>
+      <th>Marks17</th>
+      <th>Marks18</th>
+      <th>Marks19</th>
+      <th>Marks20</th>
+
+      <th>Marks21</th>
+      <th>Marks22</th>
+      <th>Marks23</th>
+      <th>Marks24</th>
+      <th>Marks25</th>
+      <th>Marks26</th>
+      <th>Marks27</th>
+      <th>Marks28</th>
+      <th>Marks29</th>
+      <th>Marks30</th>
+
+      <th>Marks31</th>
+      <th>Marks32</th>
+      <th>Marks33</th>
+      <th>Marks34</th>
+      <th>Marks35</th>
+      <th>Marks36</th>
+      <th>Marks37</th>
+      <th>Marks38</th>
+      <th>Marks39</th>
+      <th>Marks40</th>
+
+      <th>YEAR MARK/SEMESTER/TERM MARKS41</th>
+      <th>Marks42</th>
+      <th>Marks43</th>
+      <th>Marks44</th>
+      <th>Marks45</th>
+      <th>Marks46</th>
+      <th>Marks47</th>
+      <th>Marks48</th>
+      <th>REPORT/FINAL RESULTS</th>
+      <th>FINAL EXAM</th>
+      <th>YEAR MARK/PREDICATE MARK
+      </th>
+      <th>Attendance Register</th>
+    </tr>
+  </thead>
+  {% for course in courses %}
+  {% if course.course.semester == "TERM 2" %}
+  <tbody>
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td><a href="{{ course.course.get_absolute_url }}">{{ course.course.title }}</a></td>
+      <td>{{ course.course.code }}</td>
+      <td>{{ course.course.credit }}</td>
+      <td>{{ course.assignment }}</td>
+      <td>{{ course.mid_exam }}</td>
+      <td>{{ course.quiz }}</td>
+      <td>{{ course.attendance }}</td>
+      <td>{{ course.marks_1 }}</td>
+      <td>{{ course.marks_2 }}</td>
+      <td>{{ course.marks_3 }}</td>
+      <td>{{ course.marks_4 }}</td>
+      <td>{{ course.marks_5 }}</td>
+      <td>{{ course.marks_6 }}</td>
+      <td>{{ course.marks_7 }}</td>
+      <td>{{ course.marks_8 }}</td>
+      <td>{{ course.marks_9 }}</td>
+      <td>{{ course.marks_10 }}</td>
+      <td>{{ course.marks_11 }}</td>
+      <td>{{ course.marks_12 }}</td>
+      <td>{{ course.marks_13 }}</td>
+      <td>{{ course.marks_14 }}</td>
+      <td>{{ course.marks_15 }}</td>
+      <td>{{ course.marks_16 }}</td>
+      <td>{{ course.marks_17 }}</td>
+      <td>{{ course.marks_18 }}</td>
+      <td>{{ course.marks_19 }}</td>
+      <td>{{ course.marks_20 }}</td>
+      <td>{{ course.marks_21 }}</td>
+      <td>{{ course.marks_22 }}</td>
+      <td>{{ course.marks_23 }}</td>
+      <td>{{ course.marks_24 }}</td>
+      <td>{{ course.marks_25 }}</td>
+      <td>{{ course.marks_26 }}</td>
+      <td>{{ course.marks_27 }}</td>
+      <td>{{ course.marks_28 }}</td>
+      <td>{{ course.marks_29 }}</td>
+      <td>{{ course.marks_30 }}</td>
+
+      <td>{{ course.marks_31 }}</td>
+      <td>{{ course.marks_32 }}</td>
+      <td>{{ course.marks_33 }}</td>
+      <td>{{ course.marks_34 }}</td>
+      <td>{{ course.marks_35 }}</td>
+      <td>{{ course.marks_36 }}</td>
+      <td>{{ course.marks_37 }}</td>
+      <td>{{ course.marks_38 }}</td>
+      <td>{{ course.marks_39 }}</td>
+      <td>{{ course.marks_40 }}</td>
+
+      
+      <td>{{ course.marks_41 }}</td>
+      <td>{{ course.marks_42 }}</td>
+      <td>{{ course.marks_43}}</td>
+      <td>{{ course.marks_44 }}</td>
+      <td>{{ course.marks_45 }}</td>
+      <td>{{ course.marks_46 }}</td>
+      <td>{{ course.marks_47}}</td>
+      <td>{{ course.marks_48 }}</td>
+      <td>{{ course.marks_49}}</td>
+      <td>{{ course.marks_50 }}</td>
+      <td>{{ course.final_exam }}</td>
+      {% if course.total >= 45 %}
+      <td class="success"><i class="fas fa-check-circle"></i> {{ course.total }}</td>
+      {% else %}
+      <td class="danger"><i class="fas fa-exclamation-circle"></i> {{ course.total }}</td>
+      {% endif %}
+    </tr>
+  </tbody>
+  {% endif %}
+  {% endfor %}
+</table>
+</div>
+
+
+<div class="table-responsive p-0 px-2 mt-3">
+  <div class="table-title" style="text-align: center; font-weight: bold; font-size: 19px;">TERM 3/SEMESTER TWO</div>
+  <table class="table table-light">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Subject/Module Name</th>
+      <th>Subjet Code</th>
+      <th>points</th>
+      <th>Blank Box</th>
+      <th>Assignment</th>
+      <th>Test 1</th>
+      <th>Daily Attendance</th>
+      <th>Marks1</th>
+      <th>Marks2</th>
+      <th>Marks3</th>
+      <th>Marks4</th>
+      <th>Marks5</th>
+      <th>Marks6</th>
+      <th>Marks7</th>
+      <th>Marks8</th>
+      <th>Marks9</th>
+      <th>Marks10</th>
+
+      <th>Marks11</th>
+      <th>Marks12</th>
+      <th>Marks13</th>
+      <th>Marks14</th>
+      <th>Marks15</th>
+      <th>Marks16</th>
+      <th>Marks17</th>
+      <th>Marks18</th>
+      <th>Marks19</th>
+      <th>Marks20</th>
+
+      <th>Marks21</th>
+      <th>Marks22</th>
+      <th>Marks23</th>
+      <th>Marks24</th>
+      <th>Marks25</th>
+      <th>Marks26</th>
+      <th>Marks27</th>
+      <th>Marks28</th>
+      <th>Marks29</th>
+      <th>Marks30</th>
+
+      <th>Marks31</th>
+      <th>Marks32</th>
+      <th>Marks33</th>
+      <th>Marks34</th>
+      <th>Marks35</th>
+      <th>Marks36</th>
+      <th>Marks37</th>
+      <th>Marks38</th>
+      <th>Marks39</th>
+      <th>Marks40</th>
+
+      <th>YEAR MARK/SEMESTER/TERM MARKS41</th>
+      <th>Marks42</th>
+      <th>Marks43</th>
+      <th>Marks44</th>
+      <th>Marks45</th>
+      <th>Marks46</th>
+      <th>Marks47</th>
+      <th>Marks48</th>
+      <th>REPORT/FINAL RESULTS</th>
+      <th>FINAL EXAM</th>
+      <th>YEAR MARK/PREDICATE MARK
+      </th>
+      <th>Attendance Register</th>
+    </tr>
+  </thead>
+  {% for course in courses %}
+  {% if course.course.semester == "TERM 3" %}
+  <tbody>
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td><a href="{{ course.course.get_absolute_url }}">{{ course.course.title }}</a></td>
+      <td>{{ course.course.code }}</td>
+      <td>{{ course.course.credit }}</td>
+      <td>{{ course.assignment }}</td>
+      <td>{{ course.mid_exam }}</td>
+      <td>{{ course.quiz }}</td>
+      <td>{{ course.attendance }}</td>
+      <td>{{ course.marks_1 }}</td>
+      <td>{{ course.marks_2 }}</td>
+      <td>{{ course.marks_3 }}</td>
+      <td>{{ course.marks_4 }}</td>
+      <td>{{ course.marks_5 }}</td>
+      <td>{{ course.marks_6 }}</td>
+      <td>{{ course.marks_7 }}</td>
+      <td>{{ course.marks_8 }}</td>
+      <td>{{ course.marks_9 }}</td>
+      <td>{{ course.marks_10 }}</td>
+      <td>{{ course.marks_11 }}</td>
+      <td>{{ course.marks_12 }}</td>
+      <td>{{ course.marks_13 }}</td>
+      <td>{{ course.marks_14 }}</td>
+      <td>{{ course.marks_15 }}</td>
+      <td>{{ course.marks_16 }}</td>
+      <td>{{ course.marks_17 }}</td>
+      <td>{{ course.marks_18 }}</td>
+      <td>{{ course.marks_19 }}</td>
+      <td>{{ course.marks_20 }}</td>
+      <td>{{ course.marks_21 }}</td>
+      <td>{{ course.marks_22 }}</td>
+      <td>{{ course.marks_23 }}</td>
+      <td>{{ course.marks_24 }}</td>
+      <td>{{ course.marks_25 }}</td>
+      <td>{{ course.marks_26 }}</td>
+      <td>{{ course.marks_27 }}</td>
+      <td>{{ course.marks_28 }}</td>
+      <td>{{ course.marks_29 }}</td>
+      <td>{{ course.marks_30 }}</td>
+
+      <td>{{ course.marks_31 }}</td>
+      <td>{{ course.marks_32 }}</td>
+      <td>{{ course.marks_33 }}</td>
+      <td>{{ course.marks_34 }}</td>
+      <td>{{ course.marks_35 }}</td>
+      <td>{{ course.marks_36 }}</td>
+      <td>{{ course.marks_37 }}</td>
+      <td>{{ course.marks_38 }}</td>
+      <td>{{ course.marks_39 }}</td>
+      <td>{{ course.marks_40 }}</td>
+
+      
+      <td>{{ course.marks_41 }}</td>
+      <td>{{ course.marks_42 }}</td>
+      <td>{{ course.marks_43}}</td>
+      <td>{{ course.marks_44 }}</td>
+      <td>{{ course.marks_45 }}</td>
+      <td>{{ course.marks_46 }}</td>
+      <td>{{ course.marks_47}}</td>
+      <td>{{ course.marks_48 }}</td>
+      <td>{{ course.marks_49}}</td>
+      <td>{{ course.marks_50 }}</td>
+      <td>{{ course.final_exam }}</td>
+      {% if course.total >= 45 %}
+      <td class="success"><i class="fas fa-check-circle"></i> {{ course.total }}</td>
+      {% else %}
+      <td class="danger"><i class="fas fa-exclamation-circle"></i> {{ course.total }}</td>
+      {% endif %}
+    </tr>
+  </tbody>
+  {% endif %}
+  {% endfor %}
+</table>
+</div>
+
+
+<div class="table-responsive p-0 px-2 mt-3">
+  <div class="table-title" style="text-align: center; font-weight: bold; font-size: 19px;">TERM 4/SEMESTER TWO</div>
+  <table class="table table-light">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Subject/Module Name</th>
+      <th>Subjet Code</th>
+      <th>points</th>
+      <th>Blank Box</th>
+      <th>Assignment</th>
+      <th>Test 1</th>
+      <th>Daily Attendance</th>
+      <th>Marks1</th>
+      <th>Marks2</th>
+      <th>Marks3</th>
+      <th>Marks4</th>
+      <th>Marks5</th>
+      <th>Marks6</th>
+      <th>Marks7</th>
+      <th>Marks8</th>
+      <th>Marks9</th>
+      <th>Marks10</th>
+
+      <th>Marks11</th>
+      <th>Marks12</th>
+      <th>Marks13</th>
+      <th>Marks14</th>
+      <th>Marks15</th>
+      <th>Marks16</th>
+      <th>Marks17</th>
+      <th>Marks18</th>
+      <th>Marks19</th>
+      <th>Marks20</th>
+
+      <th>Marks21</th>
+      <th>Marks22</th>
+      <th>Marks23</th>
+      <th>Marks24</th>
+      <th>Marks25</th>
+      <th>Marks26</th>
+      <th>Marks27</th>
+      <th>Marks28</th>
+      <th>Marks29</th>
+      <th>Marks30</th>
+
+      <th>Marks31</th>
+      <th>Marks32</th>
+      <th>Marks33</th>
+      <th>Marks34</th>
+      <th>Marks35</th>
+      <th>Marks36</th>
+      <th>Marks37</th>
+      <th>Marks38</th>
+      <th>Marks39</th>
+      <th>Marks40</th>
+
+      <th>YEAR MARK/SEMESTER/TERM MARKS41</th>
+      <th>Marks42</th>
+      <th>Marks43</th>
+      <th>Marks44</th>
+      <th>Marks45</th>
+      <th>Marks46</th>
+      <th>Marks47</th>
+      <th>Marks48</th>
+      <th>REPORT/FINAL RESULTS</th>
+      <th>FINAL EXAM</th>
+      <th>YEAR MARK/PREDICATE MARK
+      </th>
+      <th>Attendance Register</th>
+    </tr>
+  </thead>
+  {% for course in courses %}
+  {% if course.course.semester == "TERM 4" %}
+  <tbody>
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td><a href="{{ course.course.get_absolute_url }}">{{ course.course.title }}</a></td>
+      <td>{{ course.course.code }}</td>
+      <td>{{ course.course.credit }}</td>
+      <td>{{ course.assignment }}</td>
+      <td>{{ course.mid_exam }}</td>
+      <td>{{ course.quiz }}</td>
+      <td>{{ course.attendance }}</td>
+      <td>{{ course.marks_1 }}</td>
+      <td>{{ course.marks_2 }}</td>
+      <td>{{ course.marks_3 }}</td>
+      <td>{{ course.marks_4 }}</td>
+      <td>{{ course.marks_5 }}</td>
+      <td>{{ course.marks_6 }}</td>
+      <td>{{ course.marks_7 }}</td>
+      <td>{{ course.marks_8 }}</td>
+      <td>{{ course.marks_9 }}</td>
+      <td>{{ course.marks_10 }}</td>
+      <td>{{ course.marks_11 }}</td>
+      <td>{{ course.marks_12 }}</td>
+      <td>{{ course.marks_13 }}</td>
+      <td>{{ course.marks_14 }}</td>
+      <td>{{ course.marks_15 }}</td>
+      <td>{{ course.marks_16 }}</td>
+      <td>{{ course.marks_17 }}</td>
+      <td>{{ course.marks_18 }}</td>
+      <td>{{ course.marks_19 }}</td>
+      <td>{{ course.marks_20 }}</td>
+      <td>{{ course.marks_21 }}</td>
+      <td>{{ course.marks_22 }}</td>
+      <td>{{ course.marks_23 }}</td>
+      <td>{{ course.marks_24 }}</td>
+      <td>{{ course.marks_25 }}</td>
+      <td>{{ course.marks_26 }}</td>
+      <td>{{ course.marks_27 }}</td>
+      <td>{{ course.marks_28 }}</td>
+      <td>{{ course.marks_29 }}</td>
+      <td>{{ course.marks_30 }}</td>
+
+      <td>{{ course.marks_31 }}</td>
+      <td>{{ course.marks_32 }}</td>
+      <td>{{ course.marks_33 }}</td>
+      <td>{{ course.marks_34 }}</td>
+      <td>{{ course.marks_35 }}</td>
+      <td>{{ course.marks_36 }}</td>
+      <td>{{ course.marks_37 }}</td>
+      <td>{{ course.marks_38 }}</td>
+      <td>{{ course.marks_39 }}</td>
+      <td>{{ course.marks_40 }}</td>
+
+      
+      <td>{{ course.marks_41 }}</td>
+      <td>{{ course.marks_42 }}</td>
+      <td>{{ course.marks_43}}</td>
+      <td>{{ course.marks_44 }}</td>
+      <td>{{ course.marks_45 }}</td>
+      <td>{{ course.marks_46 }}</td>
+      <td>{{ course.marks_47}}</td>
+      <td>{{ course.marks_48 }}</td>
+      <td>{{ course.marks_49}}</td>
+      <td>{{ course.marks_50 }}</td>
+      <td>{{ course.final_exam }}</td>
+      {% if course.total >= 45 %}
+      <td class="success"><i class="fas fa-check-circle"></i> {{ course.total }}</td>
+      {% else %}
+      <td class="danger"><i class="fas fa-exclamation-circle"></i> {{ course.total }}</td>
+      {% endif %}
+    </tr>
+  </tbody>
+  {% endif %}
+  {% endfor %}
+</table>
+</div>
+
+
+
+
+
+
+<br>
+{% endblock %}
