@@ -1,3 +1,4 @@
+# pylint: disable-all
 from django.urls import path
 from . import views
 
