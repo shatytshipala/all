@@ -1,3 +1,4 @@
+# pylint: disable-all
 # search.templatetags.class_name.py
 from django import template
 
