@@ -1,3 +1,4 @@
+# pylint: disable-all
 #!C:\Users\shaty\Desktop\allin\ESYSTEM\en\scripts\python.exe
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
