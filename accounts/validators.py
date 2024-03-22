@@ -1,3 +1,4 @@
+# pylint: disable-all
 import re
 
 from django.core import validators

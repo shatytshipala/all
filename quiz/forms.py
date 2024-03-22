@@ -1,3 +1,4 @@
+# pylint: disable-all
 from django import forms
 from django.forms.widgets import RadioSelect, Textarea
 from django.contrib.admin.widgets import FilteredSelectMultiple

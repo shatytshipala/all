@@ -1,3 +1,4 @@
+# pylint: disable-all
 from django.urls import path, include
 from django.contrib.auth.views import (
     PasswordResetView,

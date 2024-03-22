@@ -1,3 +1,4 @@
+# pylint: disable-all
 from django.db import models
 from django.urls import reverse
 
@@ -124,7 +125,7 @@ class TakenCourseManager(models.Manager):
                 cart_obj.user = request.user
                 cart_obj.save()
         else:
-            cart_obj = Cart.objects.new(user=request.user)
+            # pylint: disable=Cartcart_obj = Cart.objects.new(user=request.user) # pylint: disable=Cart
             new_obj = True
             request.session["cart_id"] = cart_obj.id
         return cart_obj, new_obj

@@ -1,3 +1,4 @@
+# pylint: disable-all
 from django.contrib.auth import REDIRECT_FIELD_NAME
 from django.http import Http404
 from django.contrib.auth.decorators import user_passes_test

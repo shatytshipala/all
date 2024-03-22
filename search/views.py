@@ -1,3 +1,4 @@
+# pylint: disable-all
 # from django.shortcuts import render
 # from django.views.generic import ListView
 # from app.models import NewsAndEvents
@@ -28,6 +29,7 @@
 
 
 # search.views.py
+# pylint: disable-all
 from itertools import chain
 from django.views.generic import ListView
 

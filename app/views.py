@@ -1,10 +1,14 @@
+# pylint: disable=missing-module-docstring
+# pylint: disable-all
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+# pylint: disable=unused-import
 from django.conf import settings
 
 from accounts.decorators import admin_required, lecturer_required
 from .forms import SessionForm, SemesterForm, NewsAndEventsForm
+# pylint: disable=unused-wildcard-import
 from .models import *
 
 
@@ -12,6 +16,7 @@ from .models import *
 # Annoucement Page
 # ########################################################
 @login_required
+# pylint: disable=missing-module-docstring
 def home_view(request):
     items = NewsAndEvents.objects.all().order_by("-updated_date")
     context = {

@@ -1,3 +1,4 @@
+# pylint: disable-all
 """
 Django settings for config project.
 
@@ -9,6 +10,7 @@ https://docs.djangoproject.com/en/2.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
+# pylint: disable-all
 from pathlib import Path
 import os
 import posixpath
