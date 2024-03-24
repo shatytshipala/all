@@ -28,6 +28,8 @@ environ.Env.read_env()
 #BASE_DIR = Path(__file_).resolve().parent.parent
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
@@ -35,9 +37,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "o!ld8nrt4vc*h1zoey*wj48x*q0#ss12h=+zh)kk^6b3aygg=!"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # change the default user models to our custom model
 AUTH_USER_MODEL = "accounts.User"
@@ -137,17 +139,13 @@ ASGI_APPLICATION = "config.asgi.application"
 
 DATABASES = {
     
-    'default':{
-       
-      'ENGINE' :'django.db.backends.postgresql',
-        'NAME' :'king',
-        'USER':'postgres',
-       'PASSWORD' : 'Dembe@12',
-        'HOST' :'localhost',
-        'PORT' :'5432',
+    'default':dj_database_url.parse(env('DATABASE_URL'))
+     
 
     }
-}
+    
+    
+
 
 
 
