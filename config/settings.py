@@ -14,7 +14,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 from pathlib import Path
 import os
 import posixpath
-#import dj_database_url
+import dj_database_url
 import environ
 
 # Environment variables
