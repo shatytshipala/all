@@ -116,7 +116,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "config.wsgi.application"
+WSGI_APPLICATION = "elevate.wsgi.application"
 
 ASGI_APPLICATION = "config.asgi.application"
 
@@ -210,8 +210,8 @@ EMAIL_HOST = (
 )
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = env("USER_EMAIL")
-EMAIL_HOST_PASSWORD = env("USER_PASSWORD")
+EMAIL_HOST_USER = env("kktshipala@gmail.com")
+EMAIL_HOST_PASSWORD = env("jzxhevpfkehervqt")
 
 # crispy config
 CRISPY_TEMPLATE_PACK = "bootstrap4"
