@@ -139,18 +139,18 @@ ASGI_APPLICATION = "config.asgi.application"
 
 DATABASES = {
     
-   # 'default':dj_database_url.parse(env('DATABASE_URL'))
+    'default':dj_database_url.parse(env('DATABASE_URL'))
       
-        'default':{
+      #  'default':{
        
-      'ENGINE' :'django.db.backends.postgresql',
-        'NAME' :'king',
-        'USER':'postgres',
-       'PASSWORD' : 'Dembe@12',
-       'HOST' :'localhost',
-       'PORT' :'5432',
+     # 'ENGINE' :'django.db.backends.postgresql',
+     #   'NAME' :'king',
+     #   'USER':'postgres',
+     #  'PASSWORD' : 'Dembe@12',
+     #  'HOST' :'localhost',
+     #  'PORT' :'5432',
 
-   }
+  # }
       
      
 
