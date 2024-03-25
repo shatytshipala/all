@@ -139,18 +139,18 @@ ASGI_APPLICATION = "config.asgi.application"
 
 DATABASES = {
     
-    'default':dj_database_url.parse(env('DATABASE_URL'))
+   # 'default':dj_database_url.parse(env('DATABASE_URL'))
       
-      #  'default':{
+        'default':{
        
-     # 'ENGINE' :'django.db.backends.postgresql',
-     #   'NAME' :'king',
-     #   'USER':'postgres',
-     #  'PASSWORD' : 'Dembe@12',
-     #   'HOST' :'localhost',
-     #   'PORT' :'5432',
+      'ENGINE' :'django.db.backends.postgresql',
+        'NAME' :'king',
+        'USER':'postgres',
+       'PASSWORD' : 'Dembe@12',
+       'HOST' :'localhost',
+       'PORT' :'5432',
 
-   # }
+   }
       
      
 
@@ -216,12 +216,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = (
-    "smtp.gmail.com"  # Here i'm using gmail as the email host, but you can change it
+    "smtp.gmail.com"  # Here lojs xogb twex tjst i'm using gmail as the email host, but you can change it
 )
 EMAIL_PORT = 465
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "shatytshipala@gmail.com"
-EMAIL_HOST_PASSWORD = "bujo ypub jyaw xltk"
+EMAIL_HOST_USER = "kktshipala@gmail.com"
+EMAIL_HOST_PASSWORD = "lojsxogbtwextjst"
 
 # crispy config
 CRISPY_TEMPLATE_PACK = "bootstrap4"
