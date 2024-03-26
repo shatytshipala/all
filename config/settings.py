@@ -22,6 +22,8 @@ import environ
 from six import python_2_unicode_compatible
 import django.utils.encoding
 django.utils.encoding.python_2_unicode_compatible = python_2_unicode_compatible
+import collections.abc
+import sys
 
 
 env = environ.Env()
