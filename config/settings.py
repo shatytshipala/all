@@ -19,6 +19,10 @@ import environ
 
 # Environment variables
 
+from six import python_2_unicode_compatible
+import django.utils.encoding
+django.utils.encoding.python_2_unicode_compatible = python_2_unicode_compatible
+
 
 env = environ.Env()
 environ.Env.read_env()
